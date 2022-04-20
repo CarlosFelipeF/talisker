@@ -6,6 +6,12 @@
 */
 
 const AccountId = "3400472";
+let INSERT_KEY=$secure.YOUR_SECURE_CRED_CONTAINING_INSERT_KEY
+let QUERY_KEY = $secure.YOUR_SECURE_CRED_CONTAINING_QUERY_KEY
+const MONITOR_NAME = "Application Error Count"
+const MONITOR_ID = "app-error-count" //the monitor id
+const NAMESPACE = "talisker"     // metric details are prefixed with this, best to leave as is
+
 const TASKS = [
     {
         "id": "frontendError",
@@ -29,11 +35,9 @@ const TASKS = [
     },
 ]
 
-const MONITOR_NAME = "Application Error Count"
-const MONITOR_ID = "app-error-count" //the monitor id
-const NAMESPACE = "talisker"     // metric details are prefixed with this, best to leave as is
-let INSERT_KEY = "ce099b2bea8e2c84667b0e8ab64e050cFFFFNRAL"
-let QUERY_KEY = "NRAK-E695VCGVL65HLP8UEIC81U4S3CP"
+
+
+
 
 /*
 * End of example-------------
