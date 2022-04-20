@@ -47,7 +47,6 @@ const DEFAULT_TIMEOUT = 5000    // You can specify a timeout for each task
 
 
 let assert = require('assert');
-// let _ = require("lodash");
 let RUNNING_LOCALLY = false
 
 
