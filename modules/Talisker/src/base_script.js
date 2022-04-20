@@ -157,11 +157,10 @@ const sendDataToNewRelic = async (data) => {
     let request = {
         url: "https://metric-api.newrelic.com/metric/v1",
         method: 'POST',
-        // json: true,
         headers: {
             "Api-Key": INSERT_KEY
         },
-        body: JSON.stringify(data)
+        json: data
     }
     log("\nSending data to NR metrics API...")
     return genericServiceCall([200, 202], request, (body, response, error) => {
@@ -214,8 +213,7 @@ async function runtasks(tasks) {
         await genericServiceCall([200], options, (body) => { return body })
             .then((body) => {
                 try {
-                    bodyJSON = JSON.parse(body)
-
+                    bodyJSON = body
 
                     let resultData = {}
                     let result = null
@@ -373,12 +371,10 @@ async function runtasks(tasks) {
     if (NRPostStatus === true) {
         setAttribute("nrPostStatus", "success")
         log("NR Post successful")
-        assert.equal(true, true, 'Submitted');
     } else {
         FAILED_REQUESTS++
         setAttribute("nrPostStatus", "failed")
         log("NR Post failed")
-        assert.equal(true, false, 'Failed to submit result to New Relic');
     }
 
 
