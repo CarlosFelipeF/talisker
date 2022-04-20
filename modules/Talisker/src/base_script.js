@@ -5,24 +5,15 @@
 * Example of what is set by terraform is below if you wish to run stand alone uncomment this part and adjust accordingly.
 */
 
-const AccountId = "3400472";
-let INSERT_KEY=$secure.YOUR_SECURE_CRED_CONTAINING_INSERT_KEY
+let INSERT_KEY = $secure.YOUR_SECURE_CRED_CONTAINING_INSERT_KEY
 let QUERY_KEY = $secure.YOUR_SECURE_CRED_CONTAINING_QUERY_KEY
-const MONITOR_NAME = "Application Error Count"
-const MONITOR_ID = "app-error-count" //the monitor id
+
+const AccountId = "3400472";
+const MONITOR_NAME = "Application Performance Degredation"
+const MONITOR_ID = "app-perf-degredation" //the monitor id
 const NAMESPACE = "talisker"     // metric details are prefixed with this, best to leave as is
 
 const TASKS = [
-    {
-        "id": "frontendError",
-        "name": "Frontend error Rate of Change",
-        "accountId": AccountId,
-        "selector": "ReturnValue",
-        "chaining": "NONE",
-        "fillNullValue": 0,
-        "invertResult": false,
-        "query": "select count(*) as ReturnValue FROM TransactionError where appName = 'sock-shop-frontend' SINCE 1 hours ago COMPARE WITH 1 days ago"
-    },
     {
         "id": "frontendResponseTime",
         "name": "Frontend response time change",
@@ -67,8 +58,8 @@ if (IS_LOCAL_ENV) {
     RUNNING_LOCALLY = true
     var $http = require("request");       //only for local development testing
     var $secure = {}                      //only for local development testing
-    QUERY_KEY = "NRAK-E695VCGVL65HLP8UEIC81U4S3CP"  //NRAK...
-    INSERT_KEY = "ce099b2bea8e2c84667b0e8ab64e050cFFFFNRAL"  //NRII...
+    QUERY_KEY = "NRAK-..."  //NRAK...
+    INSERT_KEY = "...NRAL"  //NRII...
 
     console.log("Running in local mode", true)
 }
