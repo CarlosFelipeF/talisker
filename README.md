@@ -1,4 +1,4 @@
-# Create New Relic Alert based on permformance degradation (COMPARE WITH Query)
+# Create New Relic Alert based on performance degradation (COMPARE WITH Query)
 
 ## Setup Scripted API Monitor
 -   Create 2 new API keys: an INGEST-LICENSE and USER
