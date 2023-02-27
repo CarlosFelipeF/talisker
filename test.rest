@@ -1,7 +1,7 @@
 ###
 POST https://api.newrelic.com/graphql
 Content-Type: application/json
-API-Key: NRAK-E695VCGVL65HLP8UEIC81U4S3CP
+API-Key:
 X-REQUEST-TYPE: GraphQL
 
 query {
